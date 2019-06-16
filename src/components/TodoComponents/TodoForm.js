@@ -3,12 +3,19 @@ import styled from 'styled-components';
 
 const TodoForm = () => {
   return (
-    <div>
+    <Form>
       <input type='text' placeholder='...task' />
       <button>Add Todo</button>
       <button>Clear Todos</button>
-    </div>
+    </Form>
   );
 };
+
+const Form = styled.div`
+  width: 98%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
 
 export default TodoForm;

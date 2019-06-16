@@ -10,8 +10,18 @@ class App extends Component {
     this.state = {
       todo : [
         {
-          task      : 'get todo working',
+          task      : 'get',
           id        : 12,
+          completed : false,
+        },
+        {
+          task      : 'todo',
+          id        : 13,
+          completed : false,
+        },
+        {
+          task      : 'working',
+          id        : 14,
           completed : false,
         },
       ],
@@ -23,7 +33,8 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <h2>{this.state.todo[0]}</h2>
+        {this.state.todo.map((todo) => <p>{todo.task}</p>)}
+        <TodoList />
       </Wrapper>
     );
   }
