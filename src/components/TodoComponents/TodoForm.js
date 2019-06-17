@@ -4,7 +4,13 @@ import styled from 'styled-components';
 const TodoForm = (props) => {
   return (
     <Form>
-      <input type='text' name='task' placeholder='...task' style={{ flex: '10', padding: '5px' }} />
+      <input
+        type='text'
+        name='task'
+        placeholder='...task'
+        style={{ flex: '10', padding: '5px' }}
+        onChange={props.onChange}
+      />
       <input type='submit' value='Submit' style={Btn} />
     </Form>
   );

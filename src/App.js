@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import TodoList from './components/TodoComponents/TodoList';
-import Todo from './components/TodoComponents/Todo';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       todo : [
@@ -57,8 +56,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <TodoList />
-        <Todo todo={this.state.todo} />
+        <TodoList onChange={this.addTodo} todo={this.state.todo} />
       </Wrapper>
     );
   }
