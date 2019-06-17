@@ -1,12 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const Todo = () => {
+const Todo = (props) => {
   return (
     <div>
-      <input type='text' placeholder='...task' />
-      <button>Add Todo</button>
-      <button>Clear Todos</button>
+      {props.todo.map((todo) => (
+        <p>
+          {todo.id} {todo.task}
+        </p>
+      ))}
     </div>
   );
 };

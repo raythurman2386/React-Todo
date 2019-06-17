@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TodoForm = () => {
+const TodoForm = (props) => {
   return (
     <Form>
-      <input type='text' placeholder='...task' />
-      <button>Add Todo</button>
-      <button>Clear Todos</button>
+      <input type='text' name='task' placeholder='...task' style={{ flex: '10', padding: '5px' }} />
+      <input type='submit' value='Submit' style={Btn} />
     </Form>
   );
 };
@@ -14,8 +13,17 @@ const TodoForm = () => {
 const Form = styled.div`
   width: 98%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 `;
+
+const Btn = {
+  padding    : '7px 12px',
+  color      : '#ddd',
+  background : '#333',
+  textAlign  : 'center',
+  flex       : '1',
+  border     : 'none',
+};
 
 export default TodoForm;
