@@ -3,13 +3,13 @@ import React from 'react';
 
 const Todo = (props) => {
   return (
-    <div>
+    <ul>
       {props.todo.map((todo) => (
-        <p>
+        <li key={todo.id}>
           {todo.id} {todo.task}
-        </p>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

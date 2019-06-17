@@ -47,8 +47,7 @@ class App extends Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
 
   addTodo = (event) => {
-    event.preventDefault();
-    this.setState({ todo: { task: event.target.value, id: Date.now(), completed: false } });
+    this.setState({ todo: { task: event.target.value, id: Date.now(), completed: 'false' } });
   };
 
   clearTodos = () => {};
