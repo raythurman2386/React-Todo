@@ -8,38 +8,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      todo : [
-        {
-          task      : 'get',
-          id        : 12,
-          completed : false,
-        },
-        {
-          task      : 'todo',
-          id        : 13,
-          completed : false,
-        },
-        {
-          task      : 'working',
-          id        : 14,
-          completed : false,
-        },
-        {
-          task      : 'better',
-          id        : 15,
-          completed : false,
-        },
-        {
-          task      : 'than',
-          id        : 16,
-          completed : false,
-        },
-        {
-          task      : 'this',
-          id        : 17,
-          completed : false,
-        },
-      ],
+      todo : [],
     };
   }
   // you will need a place to store your state in this component.
@@ -47,7 +16,7 @@ class App extends Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
 
   addTodo = (event) => {
-    this.setState({ todo: { task: event.target.value, id: Date.now(), completed: 'false' } });
+    this.setState({ todo: [ ...this.state.todo, { task: event.target.value, id: Date.now(), completed: false } ] });
   };
 
   clearTodos = () => {};
