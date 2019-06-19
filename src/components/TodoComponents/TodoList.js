@@ -1,22 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import TodoForm from './TodoForm';
-import Todo from './Todo';
+import React from "react";
+import styled from "styled-components";
+import Todo from "./Todo";
 
-const TodoList = (props) => {
+const TodoList = props => {
   return (
-    <List>
-      <TodoForm onChange={props.onChange} />
-      <Todo todo={props.todo} />
-    </List>
+    <ListWrapper>
+      {props.todo.map(todo => (
+        <Todo todo={todo} key={todo.id} completeTodo={props.completeTodo} />
+      ))}
+    </ListWrapper>
   );
 };
 
-const List = styled.div`
-  width: 98%;
+const ListWrapper = styled.ul`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
   align-items: center;
 `;
 

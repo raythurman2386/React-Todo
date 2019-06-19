@@ -3,13 +3,9 @@ import styled from "styled-components";
 
 const Todo = props => {
   return (
-    <ListWrapper>
-      {props.todo.map(todo => (
-        <ListItem key={todo.id}>
-          {todo.id} {todo.task}
-        </ListItem>
-      ))}
-    </ListWrapper>
+    <ListItem onClick={() => props.completeTodo(props.todo.id)}>
+      {props.todo.task}
+    </ListItem>
   );
 };
 
@@ -21,14 +17,6 @@ const ListItem = styled.li`
   list-style-type: none;
   margin: 2rem;
   padding: 0.5rem;
-`;
-
-const ListWrapper = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
 `;
 
 export default Todo;

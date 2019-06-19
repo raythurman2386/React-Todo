@@ -6,18 +6,23 @@ const TodoForm = props => {
     <Form>
       <input
         type="text"
-        name="task"
-        placeholder="...task"
+        name="todo"
+        placeholder="...todo"
+        value={props.value}
+        onChange={props.todoChange}
         style={{ flex: "10", padding: "5px" }}
-        onChange={props.onChange}
       />
-      <input type="submit" value="Submit" style={Btn} />
-      <input type="button" value="Clear Complete" style={BtnRed} />
+      <button onClick={props.addTodo} style={Btn}>
+        Submit
+      </button>
+      <button onClick={props.clearTodo} style={Btn}>
+        Clear
+      </button>
     </Form>
   );
 };
 
-const Form = styled.div`
+const Form = styled.form`
   width: 98%;
   display: flex;
   justify-content: space-between;
@@ -28,15 +33,6 @@ const Btn = {
   padding: "7px 12px",
   color: "#ddd",
   background: "#333",
-  textAlign: "center",
-  flex: "1",
-  border: "none"
-};
-
-const BtnRed = {
-  padding: "7px 12px",
-  color: "#ddd",
-  background: "crimson",
   textAlign: "center",
   flex: "1",
   border: "none"
