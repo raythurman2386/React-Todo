@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
+import Header from "./components/HeaderComponent/Header";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
 
@@ -9,13 +9,7 @@ class App extends Component {
     super();
 
     this.state = {
-      todos: [
-        {
-          task: "something",
-          id: "12",
-          completed: false
-        }
-      ],
+      todos: [],
       todo: ""
     };
   }
@@ -55,6 +49,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
+        <Header />
         <TodoForm
           value={this.state.todo}
           todoChange={this.changeTodo}
@@ -71,7 +66,7 @@ export default App;
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  width: 800px;
+  width: 98%;
   border: 1px solid #ddd;
   padding: 2rem;
 `;

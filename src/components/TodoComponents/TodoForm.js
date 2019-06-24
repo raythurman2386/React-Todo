@@ -1,41 +1,30 @@
 import React from "react";
-import styled from "styled-components";
+import { InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const TodoForm = props => {
   return (
-    <Form>
-      <input
+    <InputGroup>
+      <InputGroupAddon addonType="prepend">
+        <Button color="danger" onClick={props.addTodo}>
+          Submit
+        </Button>
+      </InputGroupAddon>
+      <Input
+        placeholder="todo..."
         type="text"
         name="todo"
-        placeholder="...todo"
         value={props.value}
         onChange={props.todoChange}
-        style={{ flex: "10", padding: "5px" }}
       />
-      <button onClick={props.addTodo} style={Btn}>
-        Submit
-      </button>
-      <button onClick={props.clearTodo} style={Btn}>
-        Clear
-      </button>
-    </Form>
+      <InputGroupAddon addonType="append">
+        <Button color="success" onClick={props.clearTodo}>
+          Clear
+        </Button>
+      </InputGroupAddon>
+    </InputGroup>
   );
-};
-
-const Form = styled.form`
-  width: 98%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Btn = {
-  padding: "7px 12px",
-  color: "#ddd",
-  background: "#333",
-  textAlign: "center",
-  flex: "1",
-  border: "none"
 };
 
 export default TodoForm;
